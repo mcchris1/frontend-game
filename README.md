@@ -1,104 +1,24 @@
-<!-- Headings -->
-
-# Heading 1
-
-## Heading 2
-
-### Heading 3
-
-#### Heading 4
-
-##### Heading 5
-
-###### Heading 6
-
-<!-- Italics -->
-
-_This text_ is italic
-
-_This text_ is italic
-
-<!-- Strong -->
-
-**This text** is italic
-
-**This text** is italic
-
-<!-- Strikethrough -->
-
-~~This text~~ is strikethrough
-
-<!-- Horizontal Rule -->
-
----
-
----
-
-<!-- Blockquote -->
-
-> This is a quote
-
-<!-- Links -->
-
-[Traversy Media](http://www.traversymedia.com)
-
-[Traversy Media](http://www.traversymedia.com "Traversy Media")
-
-<!-- UL -->
-
-- Item 1
-- Item 2
-- Item 3
-  - Nested Item 1
-  - Nested Item 2
-
-<!-- OL -->
-
-1. Item 1
-1. Item 2
-1. Item 3
-
-<!-- Inline Code Block -->
-
-`<p>This is a paragraph</p>`
-
-<!-- Images -->
-
-![Markdown Logo](https://markdown-here.com/img/icon256.png)
-
-<!-- Github Markdown -->
-
-<!-- Code Blocks -->
-
-```bash
-  npm install
-  npm start
-```
-
-```javascript
-function add(num1, num2) {
-  return num1 + num2;
-}
-```
-
-```python
-  def add(num1, num2):
-    return num1 + num2
-```
-
-<!-- Tables -->
+![Wah](/img/MCToBeKind.jpeg)
 
 | Day    | Deliverable                                      | Status                |
 | ------ | ------------------------------------------------ | --------------------- |
-| Dec 17 | Prompt/Wireframe/Priority Matrix/Timeframes      | xxx                   |
-| Dec 21 | Project Approval                                 | xxx                   |
-| Dec 22 | Core Application Structure (HTML, CSS, JS, etc.) | xxx                   |
-| Dec 23 | Pseudocode/Actual                                | xxx                   |
-| Dec 23 | 3 hrs                                            | MVP                   |
-| Jan 05 | 3 hrs                                            | Project Presentatiion |
+| Mar 20 | Introduction to this mess.                       | Witnessed & Notarized |
+| Mar 21 | Put affairs in order, rectify delinquencies.     | Ongoing               |
+| Mar 22 | Choose adventure: Peruse examples, select game.  | Yes                   |
+| Mar 23 | Research APIs && Always Be Wireframing.          | Typing this word now--|
+| Mar XX | asdfghjkl                                        | XXX                   |
+| Mar 29 | Oh me oh my oh no                                | MVP                   |
+| Mar 30 | Like Lauryn Hill, Ready or not.                  | Revealed to completion|
 
-<!-- Task List -->
+- [x] Create task list
+- [x] List data, requisition API
+- [x] ~~Appreciated but gratuitous.~~ 
+- [] 
+- []  
+- [] 
+- [] 
+- []  
 
-- [x] Task 1
-- [x] Task 2
-- [] Task 3
+[**API** implemented _please_ and _thank you_](https://www.thecocktaildb.com/api.php "The Cocktail DB")
+---
+> The compost of memory -- there's nothing else. <br>-Dhamana Shakespeare-Turner
