@@ -1,48 +1,87 @@
-/*----- constants -----*/ 
-/*----- app's state (variables) -----*/ 
-/*----- cached element references -----*/ 
-/*----- event listeners -----*/ 
-
-/*----- functions -----*/
-
-function initialize(){
-
-}
-//create main render function that is responsible for rendering
-//the state of the app to the DOM
-function render() {
-
-}
-
-//store flashcard data in variable
-let cocktailObj = fetch(
-    `http://www.thecocktaildb.com/api/json/v1/1/random.php`
-    )
-  .then((res) => res.json())
-  .then((data) => {
-    console.log(data);
-  })
-  .catch(err => console.error(err))
+let flashcard = document.querySelector(".flashcard");
+let flipButton = document.querySelector(".button-flip");
+let wahButton = document.querySelector(".button-wah");
+let drinks = [];
+let drinkIndex = 0;
 
 //make class
-  class Flashcard {
-    constructor (front, back, strDrink, strDrinkThumb, specs, instructions){
-        this.front = front;
-        this.back = back;
-        this.strDrink = strDrink;
-        this.strDrinkThumb = strDrinkThumb;
-        this.specs = specs;
-        this.instructions = instructions;        
-    }
+class Flashcard {
+  constructor(name, image, ingredients, measurements, instructions) {
+    this.name = name; // String
+    this.image = image; // String
+    this.ingredients = ingredients; // Array of Strings
+    this.measurements = measurements; // Array of Strings
+    this.instructions = instructions; // String
+  }
 }
 
-//plug in data from variable into Flashcard class
-let flashcardSpecs = Flashcard(cocktailObj.drinks[0].strDrink, strDrinkThumb, strInstructions, strIngredient1, strIngredient2, strIngredient3, strIngredient4, strMeasure1, strMeasure2, strMeasure3, strMeasure4)
+function fetchDrink() {
+  //store flashcard data in variable
+  fetch(`http://www.thecocktaildb.com/api/json/v1/1/random.php`)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      //plug in data from variable into Flashcard class
+      let drink = data.drinks[0];
 
-//populate DOM flashcard with info from  class object
-let flashcard = document. querySelector('.flashcard')
-flashcard.innerHTML= `<h1>${flashcardSpecs.strDrink}</h1>`
+      let ingredients = [];
+      let measurements = [];
+
+      for (let i = 1; i <= 15; i++) {
+        if (drink[`strIngredient${i}`] !== null) {
+          ingredients.push(drink[`strIngredient${i}`]);
+          measurements.push(drink[`strMeasure${i}`]);
+        }
+      }
+
+      let flashcardSpecs = new Flashcard(
+        drink.strDrink, // name
+        drink.strDrinkThumb, // image
+        ingredients, // Array of Ingredients
+        measurements, // Array of Measurements
+        drink.strInstructions
+      );
+
+      drinks.push(flashcardSpecs);
+
+      displayDrink();
+    });
+}
+
+fetchDrink();
+
+function displayDrink() {
+  //populate DOM flashcard with info from  class object
+  flashcard.style.backgroundImage = `url(${drinks[drinkIndex].image})`;
+  flashcard.innerHTML = `<h1>${drinks[drinkIndex].name}</h1>`;
+}
+
+flipButton.addEventListener("click", () => {
+  // Get all Ingredients and Measurements
+  let drink = drinks[drinkIndex]
+  let ingredientsString = ''
+  let measurementsString = ''
+
+  drink.ingredients.forEach(ingdredient => {
+    ingredientsString += `<p>${ingdredient}</p>`
+})
+
+drink.measurements.forEach(measurement => {
+    measurementsString += `<p>${measurement}</p>`
+})
+
+  flashcard.innerHTML = `
+    <h1>${drink.instructions}</h1>
+    <h3>Ingredients: </h3>
+    ${ingredientsString}
+    <h3>Measurements: </h3>
+    ${measurementsString}
+    `;
+});
 
 //to flip card, switch the contents of flashcard
 //flashcard.innerHTML=`
-
+wahButton.addEventListener("click", () => {
+    drinkIndex++
+    fetchDrink()
+})
