@@ -1,3 +1,19 @@
+/*----- constants -----*/ 
+/*----- app's state (variables) -----*/ 
+/*----- cached element references -----*/ 
+/*----- event listeners -----*/ 
+
+/*----- functions -----*/
+
+function initialize(){
+
+}
+//create main render function that is responsible for rendering
+//the state of the app to the DOM
+function render() {
+
+}
+
 //store flashcard data in variable
 let cocktailObj = fetch(
     `http://www.thecocktaildb.com/api/json/v1/1/random.php`
@@ -30,14 +46,3 @@ flashcard.innerHTML= `<h1>${flashcardSpecs.strDrink}</h1>`
 //to flip card, switch the contents of flashcard
 //flashcard.innerHTML=`
 
-
-
-  
-/*    let selectedArtwork =
-      data.data[Math.floor(Math.random() * data.data.length)];
-    console.log(selectedArtwork);
-    imgTag.src = `https://www.artic.edu/iiif/2/${selectedArtwork.image_id}/full/843,/0/default.jpg`;
-  });
-}
-
-displayImage(); */
