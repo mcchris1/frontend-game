@@ -17,7 +17,11 @@ class Flashcard {
 
 function fetchDrink() {
   //store flashcard data in variable
-  fetch(`http://www.thecocktaildb.com/api/json/v1/1/random.php`)
+  fetch(`http://www.thecocktaildb.com/api/json/v1/1/random.php`,{
+    method: 'post',
+    headers: {},
+    body: {}
+})
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
@@ -53,7 +57,7 @@ fetchDrink();
 function displayDrink() {
   //populate DOM flashcard with info from  class object
   flashcard.style.backgroundImage = `url(${drinks[drinkIndex].image})`;
-  flashcard.innerHTML = `<h1>${drinks[drinkIndex].name}</h1>`;
+  flashcard.innerHTML = `<h1 style ='color: white;'>${drinks[drinkIndex].name}</h1>`;
 }
 
 flipButton.addEventListener("click", () => {
@@ -63,21 +67,22 @@ flipButton.addEventListener("click", () => {
   let measurementsString = ''
 
   drink.ingredients.forEach(ingdredient => {
-    ingredientsString += `<p>${ingdredient}</p>`
+    ingredientsString += `<p style ='color: white;'>${ingdredient}</p>`
 })
 
 drink.measurements.forEach(measurement => {
-    measurementsString += `<p>${measurement}</p>`
+    measurementsString += `<p style ='color: white;'>${measurement}</p>`
 })
 
   flashcard.innerHTML = `
-    <h1>${drink.instructions}</h1>
-    <h3>Ingredients: </h3>
+    <h4 style ='color: white;'>${drink.instructions}</h4>
+    <h3 style ='color: white;'>Ingredients: </h3>
     ${ingredientsString}
-    <h3>Measurements: </h3>
+    <h3 style ='color: white;'>Measurements: </h3>
     ${measurementsString}
     `;
 });
+
 
 //to flip card, switch the contents of flashcard
 //flashcard.innerHTML=`
