@@ -1,4 +1,78 @@
-.tenor-gif-embed {
-    width: 25%;
-    height: auto;
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+}
+
+body {
+    justify-content: center; 
+    align-items: center
+}
+
+header {
+    font-size: 1.25em;
+    text-align: center;    
+}
+
+span {
+    color: red;
+}
+
+button {
+    cursor: pointer;
+}
+
+.button-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flashcard {
+    margin: auto;
+    padding: 5px;
+    border: 2px solid;
+    width: 500px;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: 500px 500px;
+}
+
+.button-cache {
+    width: 100px;
+    height: 100px;
+    background: url(./img/Oculist.jpg) no-repeat;
+}
+
+.button-flip {
+    width: 300px;
+    height: 100px;
+    background: url(./img/Flip.jpg) no-repeat;
+}
+
+.button-wah {
+    width: 100px;
+    height: 100px;
+    background: url(./img/MCToBeKind.jpeg) no-repeat;
+}
+
+#eyes {
+    width: 100px;
+    height: 100px;
+}
+
+#flip {
+    width: 300px;
+    height: 100px;
+}
+
+#wah {
+    width: 100px;
+    height: 100px;
+}
+
+@media screen and (max-width: 600px){
+    .small-100 {
+        width: 100%;
+    }
 }
