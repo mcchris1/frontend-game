@@ -15,42 +15,43 @@ class Flashcard {
   }
 }
 
-function fetchDrink() {
-  //store flashcard data in variable
-  fetch(`http://www.thecocktaildb.com/api/json/v1/1/random.php`,{
-    method: 'post',
-    headers: {},
-    body: {}
-})
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
-      //plug in data from variable into Flashcard class
-      let drink = data.drinks[0];
-
-      let ingredients = [];
-      let measurements = [];
-
-      for (let i = 1; i <= 15; i++) {
-        if (drink[`strIngredient${i}`] !== null) {
-          ingredients.push(drink[`strIngredient${i}`]);
-          measurements.push(drink[`strMeasure${i}`]);
+async function fetchDrink() {
+    const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+    const apiUrl = 'http://www.thecocktaildb.com/api/json/v1/1/random.php';
+  try {
+  
+       const response = await fetch(proxyUrl + apiUrl) 
+       const data = await response.json();
+       let drink = data.drinks[0];
+ 
+       let ingredients = [];
+       let measurements = [];
+ 
+       for (let i = 1; i <= 15; i++) {
+         if (drink[`strIngredient${i}`] !== null) {
+           ingredients.push(drink[`strIngredient${i}`]);
+           measurements.push(drink[`strMeasure${i}`]);
+         }
+       }
+ 
+       let flashcardSpecs = new Flashcard(
+         drink.strDrink, // name
+         drink.strDrinkThumb, // image
+         ingredients, // Array of Ingredients
+         measurements, // Array of Measurements
+         drink.strInstructions
+       );
+ 
+       drinks.push(flashcardSpecs);
+ 
+       displayDrink();
+       console.log({data});
+    } catch (error) {
+       console.log(error);
         }
+
+        //plug in data from variable into Flashcard class
       }
-
-      let flashcardSpecs = new Flashcard(
-        drink.strDrink, // name
-        drink.strDrinkThumb, // image
-        ingredients, // Array of Ingredients
-        measurements, // Array of Measurements
-        drink.strInstructions
-      );
-
-      drinks.push(flashcardSpecs);
-
-      displayDrink();
-    });
-}
 
 fetchDrink();
 
