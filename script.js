@@ -1,6 +1,7 @@
 let flashcard = document.querySelector(".flashcard");
 let flipButton = document.querySelector(".button-flip");
 let wahButton = document.querySelector(".button-wah");
+let studyButton = document.querySelector(".button-cache")
 let drinks = [];
 let drinkIndex = 0;
 
@@ -14,7 +15,7 @@ class Flashcard {
     this.instructions = instructions; // String
   }
 }
-
+//Much thanks to Danny Yu for following "patch" over CORS Error
 async function fetchDrink() {
     const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
     const apiUrl = 'http://www.thecocktaildb.com/api/json/v1/1/random.php';
@@ -22,11 +23,14 @@ async function fetchDrink() {
   
        const response = await fetch(proxyUrl + apiUrl) 
        const data = await response.json();
+    
+       //vars rendered from data
        let drink = data.drinks[0];
- 
        let ingredients = [];
        let measurements = [];
  
+       //loop will only run where there is data contained within vars ingredients and measurements, which varies
+       //harvests data from API object, now it's ours
        for (let i = 1; i <= 15; i++) {
          if (drink[`strIngredient${i}`] !== null) {
            ingredients.push(drink[`strIngredient${i}`]);
@@ -90,4 +94,13 @@ drink.measurements.forEach(measurement => {
 wahButton.addEventListener("click", () => {
     drinkIndex++
     fetchDrink()
+})
+
+//cache functionality
+function cache() {
+    form.innerHTML = `<p>${drinks[drinkIndex].name}</p>`
+}
+studyButton.addEventListener("click", () => {
+    cache()
+    console.log(cache)
 })

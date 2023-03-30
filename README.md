@@ -1,23 +1,22 @@
 # Cocktail Overflow
 
-#### Herein lies a flashcard app that matches an endless array of cocktails to their respective specs, the single most critical key-value pair to making cocktails. Flashcards are a tool for memory retention. Cocktails are a tool for memory destruction. Much like event listeners, cocktails should contain no more than three parameteres, as it's sloppy form and pretentious. 
+#### Herein lies a flashcard app that matches an endless array of cocktails to their respective specs, the single most critical key-value pair to making cocktails. Flashcards are a tool for memory retention. Cocktails are a tool for memory destruction. Much like event listeners, cocktails should contain no more than three parameteres. 
 ---
 
 ![Wah](/img/MCToBeKind.jpeg)
-#### Buttons are images. Images are buttons. Unless it's the background of the flashcard div. That's not a button. 
-#### Also, the one that is not a baby is dead, since as the time of this writing its intended function to log flashcards of the user's choosing isn't being logged properly or expressed. 
+#### One of the buttons is dead, since as the time of this writing its intended function to cache flashcards of the user's choosing isn't working.
 ---
 
 #### User's story 
 
-#### As an itinerant bartender, I want to view a randomized set of cocktails to test my knowledge. A simple thumbnail for each cocktail would help memorization. The main ingredients and measurements (i.e. "specs") are the important data to test, along with maybe glassware and mixing method.
+#### As an itinerant bartender, I want to view a randomized set of cocktails to test my knowledge. A simple thumbnail for each cocktail would help prime the visualization centers and pair nicely with the attendant ingredients and measurements. Glassware and mixing instructions seem a mite superfluous for someone with my powers of intuition, but I'll leave their inclusion to the developers' discretion. 
 
-#### I'll want to access the app on a large screen for casual study in  between jobs and on a mobile device as I'm waiting to interview and showcase my knowledge. The cleaner and more _minimalist_ the interface the better.
+#### I imagine I'd only have occasion to use the app on my phone, waiting to interview for gigs, say, or as a way to kill time with my regulars behind the bar. The cleaner and more _minimalist_ the interface the better.
 
-#### _-Seymour "Bananafish" Glass_, Mill Valley, CA 
+#### _-Seymour "Bananafish" Glass, Sandwich, MA_ 
 ---
 
-#### With respect to user's preference for scaled-back feel, app forgoes a keyboard-functionality, as this would make little sense, tap-tap-tapping the little keyboard on a handheld device. Maybe if they bring back the Blackberry. 
+#### With respect to user's preference for scaled-back feel, app forgoes a keyboard-functionality, as this would make little sense post-Blackberry, tap-tap-tapping the little keyboard on a handheld device. 
 ---
 
 - Languages used: HTML, CSS, JS

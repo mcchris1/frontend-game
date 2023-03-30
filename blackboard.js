@@ -1,4 +1,10 @@
 /*----- constants -----*/ 
+const drinkName = 
+const drinkThumb =
+
+const front = document.createElement("div")
+const back = document.createElement("div") 
+
 /*----- app's state (variables) -----*/ 
 /*----- cached element references -----*/ 
 /*----- event listeners -----*/ 
@@ -46,3 +52,16 @@ flashcard.innerHTML= `<h1>${flashcardSpecs.strDrink}</h1>`
 //to flip card, switch the contents of flashcard
 //flashcard.innerHTML=`
 
+
+DuckNotes:::
+window.onload = function() {
+  const body = document.body;
+
+  console.log(body);
+  function addDiv() {
+    // create a new div element
+    const newDiv = document.createElement("div");
+  
+    // add the newly created element and its content into the DOM
+    const currentDiv = document.getElementById("div1");
+    document.body.insertBefore(newDiv, currentDiv);
